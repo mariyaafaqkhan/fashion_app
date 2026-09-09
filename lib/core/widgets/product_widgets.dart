@@ -150,9 +150,11 @@ Row(children: [
      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(widget.pI,  height:220, fit :BoxFit.cover),
+        Image.asset(widget.pI, width: double.infinity, height:241, fit :BoxFit.cover),
         //Text('${widget.pL} ${widget.pD}', style:AppTheme.lightTheme.textTheme.titleSmall?.copyWith(color:AppColors.titleActive),),
-          Text('${widget.pL} ${widget.pD}', style:AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(color:AppColors.label),textAlign: TextAlign.center,),
+          Text('${widget.pL} ${widget.pD}', style:AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(color:AppColors.label),textAlign: TextAlign.center,
+          softWrap: true,maxLines: 2,
+          ),
            Row( mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("\$",  style:AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(color:AppColors.primary, fontSize: 15, height: 24/15 )),

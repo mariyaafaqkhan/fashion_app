@@ -45,6 +45,7 @@ class AppConstants {
   static const String brandIcon5 = '${svgPath}Gucci.svg';
   static const String brandIcon6 = '${svgPath}Tiffany & Co.svg';
   static const String videoIcon = '${svgPath}Group 11.svg';
+  static const String designIcon = '${svgPath}design.svg';
 
 
 //png
@@ -56,4 +57,8 @@ static const String  newImg4="${pngPath}Rectangle 325 (3).png";
 static const String  cImg="${pngPath}image 9.png";
 static const String cIcon = '${pngPath}image 12.png';
   static const String cIcon1 = '${pngPath}image 12 (1).png';
+  static const String ofIcon1 = '${pngPath}Miroodles Sticker.png';
+  static const String ofIcon2 = '${pngPath}Miroodles Sticker (1).png';
+  static const String ofIcon3 = '${pngPath}Miroodles Sticker (2).png';
+  static const String ofIcon4 = '${pngPath}Miroodles Sticker (3).png';
 }

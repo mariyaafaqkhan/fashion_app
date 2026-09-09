@@ -3,9 +3,11 @@ import 'package:fashion_app/core/constants/app_constants.dart';
 import 'package:fashion_app/core/widgets/footer_widget.dart';
 import 'package:fashion_app/core/widgets/header_widget.dart';
 import 'package:fashion_app/features/home/data/products.dart';
+import 'package:fashion_app/features/home/presentation/sections/open_fashion.dart';
 import 'package:fashion_app/features/home/presentation/widgets/brand_widget.dart';
 import 'package:fashion_app/features/home/presentation/widgets/carousel_widget.dart';
 import 'package:fashion_app/features/home/presentation/widgets/collections.dart';
+import 'package:fashion_app/features/home/presentation/widgets/just_for_you.dart';
 import 'package:fashion_app/features/home/presentation/widgets/new_arrival_section.dart';
 import 'package:fashion_app/features/home/presentation/widgets/trending.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +21,20 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final List<String> tabBarLabels=["All","Apparel","Dress","Tshirt","Bag"];
-
+ final List<Map<String,dynamic>>list=[
+      {"img":AppConstants.ofIcon1,
+      "label":"Fast shipping. Free on orders over \$25."
+      },
+      {"img":AppConstants.ofIcon2,
+      "label":"Sustainable process from start to finish."
+      },
+      {"img":AppConstants.ofIcon3,
+      "label":"Unique designs and high-quality materials."
+      },
+      {"img":AppConstants.ofIcon4,
+      "label":"Fast shipping. Free on orders over \$25."
+      },
+    ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,12 +64,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Collections(img: AppConstants.cIcon, sImg: AppConstants.cImg, video: AppConstants.cIcon1),
                 ),
               ),
+              SliverToBoxAdapter(
+                child: Padding(padding: const EdgeInsets.only(top:40),child: JustForYou(items:jfyItems), ),
+              ),
 
 SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.only(top:40),
                   child: Trending(labels: ["2021","Spring","collections","fall","dress","autumncollections","openfashion"])),
               ),
+
+              SliverToBoxAdapter(child: Padding(
+                padding: const EdgeInsets.only(top:40),
+                child: OpenFashion(list: list,),
+              ),),
                SliverFillRemaining(
                 hasScrollBody: false,
                 child:Column(
