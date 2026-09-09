@@ -44,11 +44,11 @@ class _NewArrivalSectionState extends State<NewArrivalSection> {
        GridView.builder(itemCount:widget.items.length,
        shrinkWrap: true,
        physics: NeverScrollableScrollPhysics(),
-       padding: EdgeInsets.only(top:11, left:10, right:10),
+       padding: EdgeInsets.only(top:11, left:11, right:11),
        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
        mainAxisSpacing: 0,
-       crossAxisSpacing: 4,
-       childAspectRatio: 0.63), 
+       crossAxisSpacing: 15,
+       childAspectRatio: 0.57), 
        itemBuilder: ((context, index) {
         final image= widget.items[index]["img"];
         final label= widget.items[index]["label"];
