@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({super.key});
+  final Color hc;
+  const HeaderWidget({super.key, this.hc= AppColors.headerColor});
 
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: true,
-      backgroundColor: AppColors.headerColor,
+      backgroundColor: hc,
       toolbarHeight: 60,
       leadingWidth: 70,
       leading: InkWell(child: SvgPicture.asset(AppConstants.menuIcon, height: 24,fit: BoxFit.scaleDown,)),

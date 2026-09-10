@@ -2,6 +2,7 @@ import 'package:fashion_app/core/constants/app_colors.dart';
 import 'package:fashion_app/core/constants/app_constants.dart';
 import 'package:fashion_app/core/theme/app_theme.dart';
 import 'package:fashion_app/core/widgets/footer_line.dart';
+import 'package:fashion_app/features/blog/presentation/screens/blog_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -27,20 +28,20 @@ class _FooterWidgetState extends State<FooterWidget> {
              SvgPicture.asset(AppConstants.youtubeIcon),
             ],
           ),
-          SizedBox(height: 14,),
+          SizedBox(height: 20,),
           CustomPaint(
             size: Size(124, 9),
             painter:FooterLine() ,
           ),
-          SizedBox(height: 14,),
+          SizedBox(height: 20,),
           Column(
             children: [
-              _footerText("support@openui.design", false),
-              _footerText("+60 825 876", false),
-              _footerText("08:00 - 22:00 - Everyday", false),
+              _footerText("support@openui.design"),
+              _footerText("+60 825 876"),
+              _footerText("08:00 - 22:00 - Everyday"),
             ],
           ),
-            SizedBox(height: 14,),
+            SizedBox(height: 20,),
           CustomPaint(
             size: Size(124, 10),
             painter:FooterLine() ,
@@ -48,12 +49,15 @@ class _FooterWidgetState extends State<FooterWidget> {
           SizedBox(height: 14,),
        Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-      _footerText("About", true),
-      _footerText("Contact", true),
-      _footerText("Blog", true),
+      _footerText("About"),
+      _footerText("Contact"),
+      InkWell(onTap: (){
+       Navigator.push(context, MaterialPageRoute(builder: (context)=> BlogScreen() ));
+      },
+        child: _footerText("Blog")),
             ],
           ),
-          SizedBox(height: 14,),
+          SizedBox(height: 20,),
           Container(
             alignment: Alignment.center,
             width: double.infinity,
@@ -66,14 +70,9 @@ class _FooterWidgetState extends State<FooterWidget> {
   }
 }
 
-Widget _footerText (String value, bool isbutton) {
-  return InkWell(
-    onTap: isbutton ?() {
-      
-    }:null,
-    child: Text(
-      value, style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(color: AppColors.body),
-    ),
+Widget _footerText (String value) {
+  return Text(
+    value, style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(color: AppColors.body),
   );
 }
 

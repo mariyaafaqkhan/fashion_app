@@ -13,25 +13,31 @@ class OpenFashion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        SvgPicture.asset(AppConstants.logo, height: 40,),
-        Padding(
-          padding: const EdgeInsets.only(left:44,right:44, top:16),
-          child: Text("Making a luxurious lifestyle accessible for a generous group of women is our daily drive.", textAlign: TextAlign.center, style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(color:AppColors.label, letterSpacing: 0.01,height: 1.5),),
-        ),
-         CustomPaint(
-       size: Size(124, 9),
-      painter: FooterLine(),
-     ),
-       SizedBox(height: 300,
-         child: GridView.builder(itemCount: list.length,physics: NeverScrollableScrollPhysics(),gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1.5, crossAxisSpacing: 1, mainAxisSpacing: 1) , itemBuilder: (context, index){
-         return OpenFashionWidget(img: list[index]["img"], label: list[index]["label"]);
-         }),
+    return Container(
+       color: Color.fromRGBO(242, 242, 242, 1),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(height: 20,),
+          SvgPicture.asset(AppConstants.logo, height: 40,),
+          Padding(
+            padding: const EdgeInsets.only(left:44,right:44, top:16),
+            child: Text("Making a luxurious lifestyle accessible for a generous group of women is our daily drive.", textAlign: TextAlign.center, style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(color:AppColors.label, letterSpacing: 0.01,height: 1.5),),
+          ),
+           SizedBox(height: 10,),
+           CustomPaint(
+         size: Size(124, 9),
+        painter: FooterLine(),
        ),
-       SvgPicture.asset(AppConstants.designIcon)
-      ],
+       SizedBox(height: 10,),
+         GridView.builder(shrinkWrap: true, padding: EdgeInsets.only(right:20, left:20),itemCount: list.length,physics: NeverScrollableScrollPhysics(),gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1.7, crossAxisSpacing: 10, ) , itemBuilder: (context, index){
+           return OpenFashionWidget(img: list[index]["img"], label: list[index]["label"]);
+           }),
+        SizedBox(height: 20,),
+         SvgPicture.asset(AppConstants.designIcon),
+         SizedBox(height: 20,),
+        ],
+      ),
     );
   }
 }
