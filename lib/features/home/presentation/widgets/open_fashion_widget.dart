@@ -13,10 +13,7 @@ class OpenFashionWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
        Image.asset(img, height: 50, width: 50,),
-       Padding(
-         padding: const EdgeInsets.only(left:15),
-         child: Text(label,style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(fontSize: 13, height: 20/13, color: AppColors.label, letterSpacing: 0),textAlign: TextAlign.center,),
-       )
+       Text(label,style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(fontSize: 13, height: 20/13, color: AppColors.label, letterSpacing: 0),textAlign: TextAlign.center,maxLines: 2,)
       ],
     );
   }

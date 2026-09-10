@@ -3,6 +3,7 @@ import 'package:fashion_app/core/constants/app_constants.dart';
 import 'package:fashion_app/core/widgets/footer_widget.dart';
 import 'package:fashion_app/core/widgets/header_widget.dart';
 import 'package:fashion_app/features/home/data/products.dart';
+import 'package:fashion_app/features/home/presentation/sections/follow_us_section.dart';
 import 'package:fashion_app/features/home/presentation/sections/open_fashion.dart';
 import 'package:fashion_app/features/home/presentation/widgets/brand_widget.dart';
 import 'package:fashion_app/features/home/presentation/widgets/carousel_widget.dart';
@@ -35,6 +36,16 @@ class _HomeScreenState extends State<HomeScreen> {
       "label":"Fast shipping. Free on orders over \$25."
       },
     ];
+  final List<Map<String,dynamic>> items1=[
+    {"img":AppConstants.fuIcon1,
+    "label":"@mia"},
+    {"img":AppConstants.fuIcon2,
+    "label":"@_jihyn"},
+    {"img":AppConstants.fuIcon3,
+    "label":"@mia"},
+    {"img":AppConstants.fuIcon4,
+    "label":"@_jihyn"},
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,9 +86,16 @@ SliverToBoxAdapter(
               ),
 
               SliverToBoxAdapter(child: Padding(
-                padding: const EdgeInsets.only(top:40),
+                padding: const EdgeInsets.only(top:41),
                 child: OpenFashion(list: list,),
               ),),
+
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.only(top:40, bottom: 40),
+                  child: FollowUsSection(items: items1,),
+                ),
+              ),
                SliverFillRemaining(
                 hasScrollBody: false,
                 child:Column(

@@ -13,8 +13,7 @@ class AppColors {
   static const Color elemBackground =Color.fromRGBO(248, 240, 231, 1);
   static const Color offWhite= Color.fromRGBO(252, 252, 252, 1);
   
-  static const Color primary
-= Color.fromRGBO(168, 113, 90, 1);
+  static const Color primary= Color.fromRGBO(168, 113, 90, 1);
   static const Color secondary= Color.fromRGBO(221, 133, 96, 1);
   static const Color border= Color.fromRGBO(222, 222, 222, 1);
   static const Color background= Color.fromRGBO(255, 255, 255, 1);
